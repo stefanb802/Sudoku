@@ -281,8 +281,19 @@ namespace Sudoku
             else
                 Console.WriteLine("Congratulations! You won!");
         }
+
         static void Main(string[] args)
         {
+            Board board = new Board();
+            //printBoard(board.hiddenBoard);
+            board.PopulateSquare(1);
+            board.PopulateSquare(5);
+            board.PopulateSquare(9);
+            board.CompleteBoard(0);
+            board.GenerateUserBoard(75);
+            PrintBoard(board.userBoard);
+
+            /*
             int difficulty = GetDifficulty();
             //Ensures that the given difficulty is correct
             while(difficulty<1 || difficulty > 4)
@@ -300,6 +311,7 @@ namespace Sudoku
                 userEnded=GetInput(grid, userGrid);
             }
             FinalMessage(userEnded);
+            */
         }
     }
 }
