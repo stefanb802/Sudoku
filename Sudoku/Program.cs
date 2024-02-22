@@ -290,9 +290,9 @@ namespace Sudoku
             board.PopulateSquare(5);
             board.PopulateSquare(9);
             board.CompleteBoard(0);
-            board.GenerateUserBoard(75);
-            PrintBoard(board.userBoard);
-
+            board.GenerateUserBoard(0);
+            UserInterface.PrintBoard(board.userBoard);
+            UserInterface.PrintFinalMessage(false);
             /*
             int difficulty = GetDifficulty();
             //Ensures that the given difficulty is correct
