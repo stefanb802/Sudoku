@@ -284,6 +284,7 @@ namespace Sudoku
 
         static void Main(string[] args)
         {
+            int val = UserInterface.GetDifficulty();
             Board board = new Board();
             //printBoard(board.hiddenBoard);
             board.PopulateSquare(1);
