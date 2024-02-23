@@ -21,7 +21,7 @@ namespace Sudoku
                     if (userBoard[i, j] != 0)
                         Console.Write(userBoard[i, j] + " ");
                     else
-                        Console.WriteLine("  ");
+                        Console.Write("  ");
                 Console.WriteLine();
             }
         }
