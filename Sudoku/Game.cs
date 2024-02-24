@@ -34,7 +34,7 @@ namespace Sudoku
             board.PopulateSquare(5);
             board.PopulateSquare(9);
             board.CompleteBoard(0);
-            board.GenerateUserBoard(35);
+            board.GenerateUserBoard(30+5*difficulty);
             //UserInterface.PrintBoard(board.hiddenBoard);
             bool forceQuit=true;
             while(!GameWon(board.userBoard))
