@@ -12,7 +12,6 @@ namespace Sudoku
         public const int EASY = 1;
         public const int MEDIUM = 2;
         public const int HARD = 3;
-        public const int EXPERT = 4;
         public static void PrintBoard(int[,] userBoard)
         {
             for(int i = 0; i < 9; i++)
@@ -84,7 +83,7 @@ namespace Sudoku
                 {
                     Console.WriteLine("Choose the difficulty!(1 for Easy | 2 for Medium | 3 for Hard | 4 for Expert)");
                     int difficulty = Convert.ToInt32(Console.ReadLine());
-                    if (difficulty < EASY || difficulty > EXPERT)
+                    if (difficulty < EASY || difficulty > HARD)
                         throw new ArgumentOutOfRangeException();
                     return difficulty;
                 }
