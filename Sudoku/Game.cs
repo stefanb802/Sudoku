@@ -28,30 +28,24 @@ namespace Sudoku
         {
             Console.WriteLine("Hello! You are playing Sudoku!");
             difficulty = UserInterface.GetDifficulty();
-            Board board=new Board();
-            //Populating the 3 diagonal squares because they are not interdependent
-            board.PopulateSquare(1);
-            board.PopulateSquare(5);
-            board.PopulateSquare(9);
-            board.CompleteBoard(0);
-            board.GenerateUserBoard(30+5*difficulty);
-            //UserInterface.PrintBoard(board.hiddenBoard);
+            Testing tested = new Testing(difficulty);
             bool forceQuit=true;
-            while(!GameWon(board.userBoard))
+            while(!GameWon(tested.solvable.userBoard))
             {
-                UserInterface.PrintBoard(board.userBoard);
+                UserInterface.PrintBoard(tested.solvable.userBoard);
                 forceQuit = UserInterface.ForceQuit();
                 if (forceQuit)
                     break;
                 int[] position = new int[2];
                 position = UserInterface.GetPosition();
                 int value = UserInterface.GetValue();
-                if (IsCorrect(board.hiddenBoard, position, value))
-                    board.userBoard[position[0], position[1]] = value;
+                if (IsCorrect(tested.solvable.hiddenBoard, position, value))
+                    tested.solvable.userBoard[position[0], position[1]] = value;
                 else
                     Console.WriteLine("Wrong value!");
             }
-            UserInterface.PrintBoard(board.hiddenBoard);
+
+            UserInterface.PrintBoard(tested.solvable.hiddenBoard);
             UserInterface.PrintFinalMessage(forceQuit);
         }
     }
