@@ -1,1 +1,1 @@
-SIngle-file implementation
+Single-file implementation
