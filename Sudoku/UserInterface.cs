@@ -81,7 +81,7 @@ namespace Sudoku
             {
                 try
                 {
-                    Console.WriteLine("Choose the difficulty!(1 for Easy | 2 for Medium | 3 for Hard | 4 for Expert)");
+                    Console.WriteLine("Choose the difficulty!(1 for Easy | 2 for Medium | 3 for Hard)");
                     int difficulty = Convert.ToInt32(Console.ReadLine());
                     if (difficulty < EASY || difficulty > HARD)
                         throw new ArgumentOutOfRangeException();
